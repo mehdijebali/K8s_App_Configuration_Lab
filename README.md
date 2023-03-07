@@ -28,3 +28,25 @@ volumes:
       conﬁgMap:
         name: special-conﬁg
 ```
+## Instructions
+1. Clone the project 
+```
+git clone https://github.com/mehdijebali/K8s_App_Configuration_Lab.git
+```
+2. Apply manifest using **kubectl**
+```
+kubectl apply -f /path/to/manifest.yml
+```
+3. You can check the status of pods, services, deployments, and ingresses  with the following commands
+```
+kubecl get pods | grep <pod_name>
+kubectl get cm | grep <config_map_name>
+kubectl get secrets | grep <psecrets_name>
+```
+4. You can also list additional information of specifice pod,service, deployment, and ingress for any debugging issue
+```
+kubectl describe pod <pod_name>
+kubectl describe cm <config_map_name>
+kubectl describe secret <secret_name>
+```
+The **<pod_name>, <config_map_name>, <secret_name>)** are the values of the key `metadata.name` in each k8s manifest yaml file.
